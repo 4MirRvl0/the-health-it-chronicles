@@ -1024,3 +1024,100 @@ header {
     height: 30px !important;
   }
 }
+/* Hide mobile toggle and overlay by default on desktop */
+.menu-toggle, .menu-close-btn, .menu-overlay {
+  display: none;
+}
+
+/* ==================== MOBILE SIDE DRAWER MENU ==================== */
+@media screen and (max-width: 768px) {
+  /* Fix navbar top position so it takes minimal space */
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 15px;
+  }
+
+  .top-nav .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hamburger Button Style */
+  .menu-toggle {
+    display: block;
+    background: transparent;
+    border: 1px solid var(--accent-gold, #f59e0b);
+    color: var(--accent-gold, #f59e0b);
+    font-size: 1.4rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  /* Turn nav-left and nav-right into a sliding side drawer */
+  .nav-left, .nav-right {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Hidden off screen on the left */
+    width: 260px;
+    height: 100vh;
+    background-color: #111827; /* Dark background matching theme */
+    border-right: 2px solid var(--accent-gold, #f59e0b);
+    flex-direction: column;
+    align-items: flex-start !important;
+    padding: 60px 20px 20px 20px;
+    gap: 20px !important;
+    transition: left 0.3s ease-in-out;
+    z-index: 1050;
+  }
+
+  /* Merge nav-right links into the drawer */
+  .nav-right {
+    top: 220px; /* Stack under nav-left elements in drawer */
+    height: auto;
+    border-right: none;
+    padding-top: 0;
+    background: transparent;
+  }
+
+  /* Active Class: Slide drawer out onto the screen */
+  .nav-left.active-menu {
+    left: 0;
+  }
+  
+  .nav-right.active-menu {
+    left: 0;
+  }
+
+  /* Close X button inside drawer */
+  .menu-close-btn {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* Dark background blur when side menu opens */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 1040;
+  }
+
+  .menu-overlay.active-menu {
+    display: block;
+  }
+}
