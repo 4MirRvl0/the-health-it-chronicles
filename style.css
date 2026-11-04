@@ -944,35 +944,115 @@ header {
   font-size: 0.95rem;
   margin: 0;
 }
-/* ==================== MOBILE RESPONSIVE STYLES ==================== */
+.top-nav {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
 
-/* For tablets and mobile devices (screens 768px and below) */
+/* Push page content down so fixed navbar doesn't cover content */
+#main-tab {
+  padding-top: 70px;
+}
+
+#welcome-tab, #week-detail-tab, #citadel-tab {
+  padding-top: 40px;
+}
+
+/* Hide mobile toggle, close button, and overlay by default on desktop */
+.menu-toggle, .menu-close-btn, .menu-overlay {
+  display: none;
+}
+
+/* ==================== MOBILE RESPONSIVE STYLES & SIDE DRAWER ==================== */
 @media screen and (max-width: 768px) {
-  /* Adjust Navigation Layout */
-  .top-nav .nav-content {
-    flex-direction: column;
-    gap: 12px;
-    padding: 10px 15px;
+  .top-nav {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    background-color: #111827;
   }
 
-  .nav-left {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
+  .top-nav .nav-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  /* Hamburger Button */
+  .menu-toggle {
+    display: block;
+    background: transparent;
+    border: 1px solid var(--accent-gold, #f59e0b);
+    color: var(--accent-gold, #f59e0b);
+    font-size: 1.4rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  /* Sliding Side Drawer Navigation */
+  .nav-left, .nav-right {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 260px;
+    height: 100vh;
+    background-color: #111827;
+    border-right: 2px solid var(--accent-gold, #f59e0b);
+    flex-direction: column;
+    align-items: flex-start !important;
+    padding: 80px 20px 20px 20px !important;
+    gap: 15px !important;
+    transition: left 0.3s ease-in-out;
+    z-index: 1050;
   }
 
   .nav-right {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
+    top: 250px; /* Stacks secondary links under nav-left in drawer */
+    height: auto;
+    border-right: none;
+    background: transparent;
+    padding-top: 0 !important;
   }
 
-  /* Shrink navigation logos slightly for small screens */
-  .nav-left img {
-    width: 35px !important;
-    height: 35px !important;
+  .nav-left.active-menu, 
+  .nav-right.active-menu {
+    left: 0;
+  }
+
+  /* Close 'X' Button inside Drawer */
+  .menu-close-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: var(--accent-gold, #f59e0b);
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+
+  /* Backdrop Overlay Blur */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 1040;
+  }
+
+  .menu-overlay.active-menu {
+    display: block;
   }
 
   /* Adjust Hero / Welcome Card */
@@ -990,18 +1070,18 @@ header {
     font-size: 1rem !important;
   }
 
-  /* Make weekly journal entry cards fit mobile screens */
+  /* Journal & Citadel Cards */
   .journal-card, .citadel-card {
     padding: 15px !important;
     margin: 10px !important;
   }
 
-  /* Resize photos grid on mobile so images don't overflow */
+  /* Stack Photo Grids on Mobile */
   .photo-grid {
-    grid-template-columns: 1fr !important; /* Stack photos vertically on mobile */
+    grid-template-columns: 1fr !important;
   }
 
-  /* Buttons & Footers */
+  /* Social Buttons */
   .social-links {
     flex-direction: column;
     align-items: center;
@@ -1017,11 +1097,6 @@ header {
 @media screen and (max-width: 480px) {
   .welcome-title {
     font-size: 1.5rem !important;
-  }
-  
-  .nav-left img {
-    width: 30px !important;
-    height: 30px !important;
   }
 }
 /* ==================== FIXED TOP NAVIGATION BAR ==================== */
