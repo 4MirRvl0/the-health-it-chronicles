@@ -52,40 +52,59 @@
   <!-- ==================== MAIN PORTFOLIO TAB ==================== -->
   <div id="main-tab" class="tab-content hidden-tab">
     
-   <!-- Navigation Bar with Dropdown Menu & Quad Logos -->
+   <!-- Navigation Bar with Hamburger Menu & Quad Logos -->
     <nav class="top-nav">
       <div class="container nav-content">
-        <div class="nav-left" style="display: flex; align-items: center; gap: 10px;">
-          <!-- RHU Logo -->
-          <img src="462618422_122096521382568569_3494662759023732057_n.jpg" alt="Municipal Health Office Logo" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-gold, #f59e0b);">
+        
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Left Side Drawer Links / Logos -->
+        <div class="nav-left" id="nav-left-menu">
           
-          <!-- LGU Gubat Logo -->
-          <img src="Gubat.png" alt="LGU Gubat Logo" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-gold, #f59e0b);">
+          <!-- Close Button inside Mobile Drawer -->
+          <button class="menu-close-btn" onclick="toggleMobileMenu()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+
+          <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
+            <!-- RHU Logo -->
+            <img src="462618422_122096521382568569_3494662759023732057_n.jpg" alt="Municipal Health Office Logo" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-gold, #f59e0b);">
+            
+            <!-- LGU Gubat Logo -->
+            <img src="Gubat.png" alt="LGU Gubat Logo" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-gold, #f59e0b);">
+          </div>
           
           <!-- Dropdown Button for Individual Week Compilation Tabs -->
-          <div class="dropdown">
-            <button class="dropbtn citadel-glow-btn">
-              The Health IT Chronicles <i class="fa-solid fa-caret-down"></i>
+          <div class="dropdown" style="width: 100%;">
+            <button class="dropbtn citadel-glow-btn" style="width: 100%; text-align: left;" onclick="closeMobileMenu()">
+              The Health IT Chronicles <i class="fa-solid fa-caret-down" style="float: right; margin-top: 4px;"></i>
             </button>
             <div class="dropdown-content" id="gallery-dropdown-links">
-              <!-- Dynamically populated weekly navigation links -->
+              <!-- Dynamically populated weekly navigation links from script.js -->
             </div>
           </div>
         </div>
 
-        <div class="nav-right">
+        <!-- Right Side Nav Actions -->
+        <div class="nav-right" id="nav-right-menu">
           <!-- Book of Citadels & Terms Button -->
-          <button class="dropbtn" onclick="openCitadelTab()" style="cursor: pointer;">
+          <button class="dropbtn" onclick="openCitadelTab(); closeMobileMenu();" style="cursor: pointer; width: 100%; text-align: left;">
             <i class="fa-solid fa-book-bookmark" style="margin-right: 6px;"></i> Book of Citadels & Terms
           </button>
 
           <!-- Cover Page Button on Far Right -->
-          <button class="nav-back-btn" onclick="openWelcomeTab()">
-            <i class="fa-solid fa-house"></i> Cover Page
+          <button class="nav-back-btn" onclick="openWelcomeTab(); closeMobileMenu();" style="width: 100%; text-align: left;">
+            <i class="fa-solid fa-house" style="margin-right: 6px;"></i> Cover Page
           </button>
         </div>
       </div>
     </nav>
+
+    <!-- Dark Background Overlay for Mobile Menu Drawer -->
+    <div class="menu-overlay" id="menu-overlay" onclick="toggleMobileMenu()"></div>
 
     <header>
       <div class="container">
