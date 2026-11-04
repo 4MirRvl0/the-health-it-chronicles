@@ -1263,3 +1263,32 @@ header {
     text-align: center;
   }
 }
+@media screen and (max-width: 768px) {
+  /* Ensure the active sliding drawers sit above the overlay and allow pointer interaction */
+  .nav-left.active-menu, 
+  .nav-right.active-menu {
+    left: 0 !important;
+    pointer-events: auto !important;
+    z-index: 10005 !important;
+  }
+
+  /* Make sure all buttons inside the side drawer are clickable */
+  .nav-left button, 
+  .nav-right button, 
+  .nav-left a, 
+  .nav-right a,
+  .dropdown-content a {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 10006 !important;
+  }
+
+  /* Fix overlay z-index so it sits behind the drawer contents but above the page */
+  .menu-overlay {
+    z-index: 9998 !important;
+  }
+  .menu-overlay.active-menu {
+    display: block !important;
+  }
+}
