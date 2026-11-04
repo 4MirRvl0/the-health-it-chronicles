@@ -418,3 +418,24 @@ function closeImageModal() {
     modal.style.display = "none";
   }
 }
+// Toggle Mobile Side Menu Drawer
+function toggleMobileMenu() {
+  const navLeft = document.getElementById('nav-left-menu');
+  const navRight = document.getElementById('nav-right-menu');
+  const overlay = document.getElementById('menu-overlay');
+
+  if (navLeft) navLeft.classList.toggle('active-menu');
+  if (navRight) navRight.classList.toggle('active-menu');
+  if (overlay) overlay.classList.toggle('active-menu');
+}
+
+// Close Mobile Side Menu after clicking a section link
+function closeMobileMenu() {
+  const navLeft = document.getElementById('nav-left-menu');
+  const navRight = document.getElementById('nav-right-menu');
+  const overlay = document.getElementById('menu-overlay');
+
+  if (navLeft) navLeft.classList.remove('active-menu');
+  if (navRight) navRight.classList.remove('active-menu');
+  if (overlay) overlay.classList.remove('active-menu');
+}
