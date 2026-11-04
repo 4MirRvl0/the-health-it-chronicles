@@ -944,3 +944,83 @@ header {
   font-size: 0.95rem;
   margin: 0;
 }
+/* ==================== MOBILE RESPONSIVE STYLES ==================== */
+
+/* For tablets and mobile devices (screens 768px and below) */
+@media screen and (max-width: 768px) {
+  /* Adjust Navigation Layout */
+  .top-nav .nav-content {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 15px;
+  }
+
+  .nav-left {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* Shrink navigation logos slightly for small screens */
+  .nav-left img {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  /* Adjust Hero / Welcome Card */
+  .welcome-card {
+    padding: 25px 15px;
+    margin: 15px;
+  }
+
+  .welcome-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2;
+  }
+
+  .welcome-subtitle {
+    font-size: 1rem !important;
+  }
+
+  /* Make weekly journal entry cards fit mobile screens */
+  .journal-card, .citadel-card {
+    padding: 15px !important;
+    margin: 10px !important;
+  }
+
+  /* Resize photos grid on mobile so images don't overflow */
+  .photo-grid {
+    grid-template-columns: 1fr !important; /* Stack photos vertically on mobile */
+  }
+
+  /* Buttons & Footers */
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* For very small phones (screens 480px and below) */
+@media screen and (max-width: 480px) {
+  .welcome-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .nav-left img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
