@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Health IT Chronicles — OJT Blog</title>
+  
+  <!-- External Resources: Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Linked CSS File -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <!-- ==================== LANDING / WELCOME TAB ==================== -->
+  <section id="welcome-tab" class="tab-content active-tab">
+    <div class="welcome-hero-container">
+      <div class="welcome-card" style="text-align: center;">
+        
+        <!-- Dual Logos Container -->
+        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 15px;">
+
+          <img src="The-Lewis-College.png" alt="The Lewis College Logo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold, #f59e0b); box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);">
+          <img src="395114924_122107688384084800_4675687638231423954_n.jpg" alt="Computer Society Logo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold, #f59e0b); box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);">
+        </div>
+
+        <div class="welcome-badge">My OJT Journey</div>
+        <h1 class="welcome-title">The Health IT Chronicles</h1>
+        <p class="welcome-subtitle">A 12-Week On-the-Job Training Journal at the Gubat Rural Health Unit</p>
+        
+        <div class="welcome-student-summary">
+          <h2>Ameer Andrei E. Arevalo</h2>
+          <span class="student-id">ID: C-2023-0183 | BS Information Technology</span>
+        </div>
+
+        <p class="welcome-intro-text" style="text-align: left;">
+          I am currently a student intern at the Gubat Rural Health Unit (RHU) in Gubat, Sorsogon, where I am gaining valuable experience in IT as well as in unfamiliar fields. My role allows me to apply my knowledge, learn from professionals, and develop new skills. Through this internship, I have had the opportunity to collaborate, take on responsibilities, and challenge myself to grow both personally and professionally.
+        </p>
+
+        <!-- Continue Button to enter main tab -->
+        <button id="btn-continue" class="continue-btn" onclick="openMainTab()">
+          Continue<i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== MAIN PORTFOLIO TAB ==================== -->
+  <div id="main-tab" class="tab-content hidden-tab">
+    
+   <!-- Navigation Bar with Dropdown Menu -->
+    <nav class="top-nav">
+      <div class="container nav-content">
+        <div class="nav-left" style="display: flex; align-items: center; gap: 10px;">
+          <!-- RHU Logo -->
+          <img src="462618422_122096521382568569_3494662759023732057_n.jpg" alt="Municipal Health Office Logo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-gold, #f59e0b);">
+          
+          <!-- LGU Gubat Logo -->
+          <img src="Gubat.png" alt="LGU Gubat Logo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-gold, #f59e0b);">
+          
+          <!-- Dropdown Button for Individual Week Compilation Tabs -->
+          <div class="dropdown">
+            <button class="dropbtn citadel-glow-btn">
+              The Health IT Chronicles <i class="fa-solid fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="gallery-dropdown-links">
+              <!-- Dynamically populated weekly navigation links -->
+            </div>
+          </div>
+        </div>
+        <div class="nav-right">
+          <!-- Book of Citadels & Terms Button -->
+          <button class="dropbtn" onclick="openCitadelTab()" style="cursor: pointer;">
+            <i class="fa-solid fa-book-bookmark" style="margin-right: 6px;"></i> Book of Citadels & Terms
+          </button>
+
+          <!-- Cover Page Button on Far Right -->
+          <button class="nav-back-btn" onclick="openWelcomeTab()">
+            <i class="fa-solid fa-house"></i> Cover Page
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <header>
+      <div class="container">
+        <h1 class="header-title">The Health IT Chronicles</h1>
+        <p class="header-subtitle">A 12-Week OJT Portfolio at the Gubat Rural Health Unit</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Student Profile Card -->
+      <section class="profile-card">
+        <div class="profile-avatar-container">
+          <img id="profile-img" alt="Ameer Andrei E. Arevalo" class="profile-avatar">
+        </div>
+
+        <div class="profile-main-content">
+          <div class="profile-info">
+            <h3 id="display-name">Ameer Andrei E. Arevalo</h3>
+            <p id="display-id">ID: C-2023-0183</p>
+            <p id="display-course">BS Information Technology</p>
+          </div>
+
+          <div class="profile-description">
+            <p>
+              My On-the-Job Training (OJT) experience at the Gubat Rural Health Unit (RHU) has been enriching and transformative. Throughout the internship, I had the opportunity to apply my theoretical knowledge in real-world scenarios, enhancing my technical skills and professional growth—especially my patience.
+            </p>
+            <p>
+              Completing my OJT at Gubat RHU reinforced the importance of adaptability, teamwork, and continuous learning. The hands-on experience I gained solidified my confidence in IT applications within the healthcare and government sectors, emphasizing the significance of IT in improving public services and community welfare.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Actions Bar -->
+      <div class="actions-bar">
+        <h2>Weekly Reports Log</h2>
+      </div>
+
+      <!-- 12-Week Blog Grid Container -->
+      <div class="blog-grid" id="blog-grid">
+        <!-- Generated dynamically via script.js -->
+      </div>
+
+     <!-- Contact Information Footer -->
+      <footer class="contact-footer" id="contact-info">
+        <h3>The Lewis College</h3>
+        <p>College of Computer Studies</p>
+        <div class="social-links" id="display-socials">
+          <a href="mailto:ameerandreiarevalo@thelewiscollege.edu.ph" id="link-email" class="social-btn"><i class="fa-solid fa-envelope"></i> <span id="text-email">ameerandreiarevalo@thelewiscollege.edu.ph</span></a>
+          <a href="https://facebook.com" id="link-fb" class="social-btn" target="_blank"><i class="fa-brands fa-facebook"></i> <span id="text-fb">facebook.com/Ameer Andrei E. Arevalo</span></a>
+          <a href="https://github.com/4MirRvl0" id="link-github" class="social-btn" target="_blank"><i class="fa-brands fa-github"></i> <span id="text-github">github.com/4MirRvl0</span></a>
+          <a href="tel:+639293469368" id="link-phone" class="social-btn"><i class="fa-solid fa-phone"></i> <span id="text-phone">+63 929 346 9368</span></a>
+        </div>
+        <p class="copyright-text" style="margin-top: 20px; font-size: 0.85rem; color: #9ca3af;">&copy;2026 The Health IT Chronicles: Internship Experience. All rights reserverd.</p>
+      </footer>
+    </main>
+  </div>
+
+
+  <!-- ==================== DEDICATED WEEKLY DETAIL TAB ==================== -->
+  <section id="week-detail-tab" class="tab-content hidden-tab">
+    <nav class="top-nav">
+      <div class="container nav-content">
+        <span class="nav-brand">Weekly Log Compilation View</span>
+        <button class="nav-back-btn" onclick="openMainTab()">
+          <i class="fa-solid fa-arrow-left"></i> Back to Main Portfolio
+        </button>
+      </div>
+    </nav>
+
+    <div class="container" style="padding-top: 40px;">
+      <div id="week-detail-content" class="week-detail-container">
+        <!-- Loaded dynamically when a week link is clicked -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== BOOK OF CITADELS & TERMS TAB ==================== -->
+  <section id="citadel-tab" class="tab-content hidden-tab">
+    <nav class="top-nav">
+      <div class="container nav-content">
+        <span class="nav-brand">Archives & Terminology View</span>
+        <button class="nav-back-btn" onclick="openMainTab()">
+          <i class="fa-solid fa-arrow-left"></i> Back to Main Portfolio
+        </button>
+      </div>
+    </nav>
+
+    <div class="container" style="padding-top: 40px; padding-bottom: 50px;">
+      <div class="citadel-header" style="margin-bottom: 25px;">
+        <span class="house-badge">ARCHIVES OF THE RHU</span>
+        <h1 class="title"><i class="fa-solid fa-book-journal-whills"></i> Book of Citadels & Terms</h1>
+        <p class="motto">"Knowledge is the Shield of the Realm — Essential Guidelines & Technical Terminology"</p>
+      </div>
+
+      <div class="terms-grid" style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- Term 1: PhilHealth YAKAP Registration & Maintenance Meds -->
+        <div class="term-card">
+          <div class="term-card-header">
+            <i class="fa-solid fa-notes-medical term-icon"></i>
+            <h3>PhilHealth YAKAP Registration & Maintenance Meds</h3>
+          </div>
+          <p class="term-desc">
+            When a patient wishes to secure maintenance medications at Gubat RHU, the first essential step is to verify their PhilHealth eligibility and check if Gubat RHU is registered as their assigned <strong>YAKAP Clinic Provider</strong>. If no YAKAP clinic is selected upon checking their eligibility claims, any resident of Gubat seeking <em>Yakap Gamot</em> benefits is required to officially register Gubat RHU as their designated primary care provider before receiving their prescription.
+          </p>
+        </div>
+
+        <!-- Term 2: Primary Care Selection Form (PCSF) -->
+        <div class="term-card">
+          <div class="term-card-header">
+            <i class="fa-solid fa-file-signature term-icon"></i>
+            <h3>Primary Care Selection Form (PCSF)</h3>
+          </div>
+          <p class="term-desc">
+            The official form used by PhilHealth members to choose or update their designated Primary Care Clinic (PCC) under the PhilHealth YAKAP primary care benefit package. This form is specifically utilized at Gubat RHU for manual empanelment, catering to patients who do not possess cellphones, active mobile numbers, or email addresses for online registration.
+          </p>
+        </div>
+
+        <!-- Term 3: PhilHealth Member Registration Form (PMRF) -->
+        <div class="term-card">
+          <div class="term-card-header">
+            <i class="fa-solid fa-id-card term-icon"></i>
+            <h3>PhilHealth Member Registration Form (PMRF)</h3>
+          </div>
+          <p class="term-desc">
+            The mandatory registration document for individuals who do not currently have an active PhilHealth membership but wish to enroll. To successfully secure a PhilHealth Identification Number (PIN) and access healthcare benefits, the applicant must complete the PMRF and submit all accompanying documentary requirements listed on the form.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Linked JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
