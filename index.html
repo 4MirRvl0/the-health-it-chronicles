@@ -52,23 +52,10 @@
   <!-- ==================== MAIN PORTFOLIO TAB ==================== -->
   <div id="main-tab" class="tab-content hidden-tab">
     
-   <!-- Navigation Bar with Hamburger Menu & Quad Logos -->
+   <!-- Navigation Bar with Dropdown Menu & Quad Logos -->
     <nav class="top-nav">
       <div class="container nav-content">
-        
-        <!-- Mobile Hamburger Toggle Button -->
-        <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-
-        <!-- Left Side Drawer Links / Logos -->
-        <div class="nav-left" id="nav-left-menu" style="display: flex; align-items: center; gap: 10px;">
-          
-          <!-- Close Button inside Mobile Drawer -->
-          <button class="menu-close-btn" onclick="toggleMobileMenu()">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-
+        <div class="nav-left" style="display: flex; align-items: center; gap: 10px;">
           <!-- RHU Logo -->
           <img src="462618422_122096521382568569_3494662759023732057_n.jpg" alt="Municipal Health Office Logo" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-gold, #f59e0b);">
           
@@ -77,7 +64,7 @@
           
           <!-- Dropdown Button for Individual Week Compilation Tabs -->
           <div class="dropdown">
-            <button class="dropbtn citadel-glow-btn" onclick="closeMobileMenu()">
+            <button class="dropbtn citadel-glow-btn">
               The Health IT Chronicles <i class="fa-solid fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="gallery-dropdown-links">
@@ -86,23 +73,19 @@
           </div>
         </div>
 
-        <!-- Right Side Nav Actions -->
-        <div class="nav-right" id="nav-right-menu">
+        <div class="nav-right">
           <!-- Book of Citadels & Terms Button -->
-          <button class="dropbtn" onclick="openCitadelTab(); closeMobileMenu();" style="cursor: pointer;">
+          <button class="dropbtn" onclick="openCitadelTab()" style="cursor: pointer;">
             <i class="fa-solid fa-book-bookmark" style="margin-right: 6px;"></i> Book of Citadels & Terms
           </button>
 
           <!-- Cover Page Button on Far Right -->
-          <button class="nav-back-btn" onclick="openWelcomeTab(); closeMobileMenu();">
+          <button class="nav-back-btn" onclick="openWelcomeTab()">
             <i class="fa-solid fa-house"></i> Cover Page
           </button>
         </div>
       </div>
     </nav>
-
-    <!-- Dark Background Overlay for Mobile Menu Drawer -->
-    <div class="menu-overlay" id="menu-overlay" onclick="toggleMobileMenu()"></div>
 
     <header>
       <div class="container">
@@ -146,12 +129,12 @@
         <!-- Generated dynamically via script.js -->
       </div>
 
-     <!-- Contact Information Footer (Fixed Email Overflow Bug) -->
+     <!-- Contact Information Footer -->
       <footer class="contact-footer" id="contact-info">
         <h3>The Lewis College</h3>
         <p>College of Computer Studies</p>
-        <div class="social-links" id="display-socials" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-          <a href="mailto:ameerandreiarevalo@thelewiscollege.edu.ph" id="link-email" class="social-btn" style="word-break: break-all; max-width: 100%;"><i class="fa-solid fa-envelope"></i> <span id="text-email">ameerandreiarevalo@thelewiscollege.edu.ph</span></a>
+        <div class="social-links" id="display-socials">
+          <a href="mailto:ameerandreiarevalo@thelewiscollege.edu.ph" id="link-email" class="social-btn"><i class="fa-solid fa-envelope"></i> <span id="text-email">ameerandreiarevalo@thelewiscollege.edu.ph</span></a>
           <a href="https://facebook.com" id="link-fb" class="social-btn" target="_blank"><i class="fa-brands fa-facebook"></i> <span id="text-fb">facebook.com/Ameer Andrei E. Arevalo</span></a>
           <a href="https://github.com/4MirRvl0" id="link-github" class="social-btn" target="_blank"><i class="fa-brands fa-github"></i> <span id="text-github">github.com/4MirRvl0</span></a>
           <a href="tel:+639293469368" id="link-phone" class="social-btn"><i class="fa-solid fa-phone"></i> <span id="text-phone">+63 929 346 9368</span></a>
