@@ -1124,78 +1124,142 @@ header {
   display: none;
 }
 
+/* ==================== ORGANIZED MOBILE SIDE DRAWER ==================== */
 @media screen and (max-width: 768px) {
-  /* Force the hamburger button to show up on mobile */
+  /* Fix top nav bar */
+  .top-nav {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #111827;
+  }
+
+  .top-nav .nav-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  /* Hamburger Toggle Button */
   .menu-toggle {
     display: block !important;
-    background: #111827 !important;
-    border: 2px solid var(--accent-gold, #f59e0b) !important;
+    background: #1f2937 !important;
+    border: 1px solid var(--accent-gold, #f59e0b) !important;
     color: var(--accent-gold, #f59e0b) !important;
-    font-size: 1.5rem !important;
-    padding: 8px 14px !important;
+    font-size: 1.3rem !important;
+    padding: 6px 10px !important;
     border-radius: 6px;
     cursor: pointer;
     z-index: 10000;
   }
 
-  /* Sliding drawer setup */
+  /* Sliding Side Drawer Container */
   .nav-left, .nav-right {
     position: fixed !important;
     top: 0 !important;
     left: -300px !important;
-    width: 260px !important;
+    width: 280px !important;
     height: 100vh !important;
-    background-color: #111827 !important;
+    background-color: #0f172a !important;
     border-right: 2px solid var(--accent-gold, #f59e0b) !important;
+    display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
-    padding: 80px 20px 20px 20px !important;
+    align-items: stretch !important;
+    padding: 70px 20px 30px 20px !important;
     gap: 15px !important;
     transition: left 0.3s ease-in-out !important;
     z-index: 9999 !important;
-    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.8);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.9);
+    overflow-y: auto; /* Allows smooth scrolling if links are long */
   }
 
+  /* Secondary nav section stacking inside drawer */
   .nav-right {
-    top: 250px !important;
-    border-right: none !important;
-    background: transparent !important;
+    top: 0 !important;
+    left: -300px !important;
+    border-right: 2px solid var(--accent-gold, #f59e0b) !important;
+    background-color: #0f172a !important;
+    padding-top: 320px !important; /* Pushes Book of Citadels and Cover Page neatly below nav-left contents */
   }
 
-  /* When active, slide it onto the screen */
+  /* Active states to slide them in */
   .nav-left.active-menu, 
   .nav-right.active-menu {
     left: 0 !important;
   }
 
-  /* Close X button inside drawer */
+  /* Close 'X' Button */
   .menu-close-btn {
     display: block !important;
     position: absolute !important;
-    top: 20px !important;
-    right: 20px !important;
+    top: 15px !important;
+    right: 15px !important;
     background: transparent !important;
     border: none !important;
     color: var(--accent-gold, #f59e0b) !important;
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
     cursor: pointer !important;
     z-index: 10001;
   }
 
-  /* Dark overlay blur */
+  /* Soft, non-blinding background overlay */
   .menu-overlay {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    background: rgba(0, 0, 0, 0.7) !important;
-    backdrop-filter: blur(4px) !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: none !important; /* Removes the heavy screen blur */
     z-index: 9998 !important;
     display: none;
   }
 
   .menu-overlay.active-menu {
     display: block !important;
+  }
+
+  /* Organized Button & Link Spacing inside Drawer */
+  .nav-left button, .nav-right button, .nav-left .dropbtn {
+    width: 100% !important;
+    text-align: left !important;
+    padding: 10px 12px !important;
+    margin-bottom: 5px;
+  }
+
+  /* Welcome Card & Layout Adjustments */
+  .welcome-card {
+    padding: 25px 15px;
+    margin: 15px;
+  }
+
+  .welcome-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2;
+  }
+
+  .welcome-subtitle {
+    font-size: 1rem !important;
+  }
+
+  .journal-card, .citadel-card {
+    padding: 15px !important;
+    margin: 10px !important;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-btn {
+    width: 100%;
+    text-align: center;
   }
 }
