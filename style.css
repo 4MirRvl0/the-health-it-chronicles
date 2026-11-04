@@ -1117,3 +1117,85 @@ header {
 #welcome-tab, #week-detail-tab, #citadel-tab {
   padding-top: 40px;
 }
+/* ==================== BULLETPROOF MOBILE SIDE MENU ==================== */
+
+/* Hide mobile toggle on desktop */
+.menu-toggle, .menu-close-btn, .menu-overlay {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Force the hamburger button to show up on mobile */
+  .menu-toggle {
+    display: block !important;
+    background: #111827 !important;
+    border: 2px solid var(--accent-gold, #f59e0b) !important;
+    color: var(--accent-gold, #f59e0b) !important;
+    font-size: 1.5rem !important;
+    padding: 8px 14px !important;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  /* Sliding drawer setup */
+  .nav-left, .nav-right {
+    position: fixed !important;
+    top: 0 !important;
+    left: -300px !important;
+    width: 260px !important;
+    height: 100vh !important;
+    background-color: #111827 !important;
+    border-right: 2px solid var(--accent-gold, #f59e0b) !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 80px 20px 20px 20px !important;
+    gap: 15px !important;
+    transition: left 0.3s ease-in-out !important;
+    z-index: 9999 !important;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.8);
+  }
+
+  .nav-right {
+    top: 250px !important;
+    border-right: none !important;
+    background: transparent !important;
+  }
+
+  /* When active, slide it onto the screen */
+  .nav-left.active-menu, 
+  .nav-right.active-menu {
+    left: 0 !important;
+  }
+
+  /* Close X button inside drawer */
+  .menu-close-btn {
+    display: block !important;
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    background: transparent !important;
+    border: none !important;
+    color: var(--accent-gold, #f59e0b) !important;
+    font-size: 1.8rem !important;
+    cursor: pointer !important;
+    z-index: 10001;
+  }
+
+  /* Dark overlay blur */
+  .menu-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(4px) !important;
+    z-index: 9998 !important;
+    display: none;
+  }
+
+  .menu-overlay.active-menu {
+    display: block !important;
+  }
+}
