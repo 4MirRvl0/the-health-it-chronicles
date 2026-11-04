@@ -5,23 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Health IT Chronicles — OJT Blog</title>
   
-  <!-- External Resources: Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Linked CSS File -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
- <!-- ==================== LANDING / WELCOME TAB ==================== -->
   <section id="welcome-tab" class="tab-content active-tab">
     <div class="welcome-hero-container">
       <div class="welcome-card" style="text-align: center;">
         
-        <!-- Dual Logos Container (TLC & Computer Society) -->
         <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 15px;">
           <img src="The-Lewis-College.png" alt="The Lewis College Logo" style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold, #f59e0b); box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);">
           <img src="395114924_122107688384084800_4675687638231423954_n.jpg" alt="Computer Society Logo" style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-gold, #f59e0b); box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);">
@@ -40,7 +36,6 @@
           I am currently a student intern at the Gubat Rural Health Unit (RHU) in Gubat, Sorsogon, where I am gaining valuable experience in IT as well as in unfamiliar fields. My role allows me to apply my knowledge, learn from professionals, and develop new skills. Through this internship, I have had the opportunity to collaborate, take on responsibilities, and challenge myself to grow both personally and professionally.
         </p>
 
-        <!-- Continue Button to enter main tab -->
         <button id="btn-continue" class="continue-btn" onclick="openMainTab()">
           Continue<i class="fa-solid fa-arrow-right"></i>
         </button>
@@ -49,22 +44,17 @@
   </section>
 
 
-  <!-- ==================== MAIN PORTFOLIO TAB ==================== -->
   <div id="main-tab" class="tab-content hidden-tab">
     
-   <!-- Navigation Bar with Hamburger Menu & Quad Logos -->
     <nav class="top-nav">
       <div class="container nav-content">
         
-        <!-- Mobile Hamburger Toggle Button -->
         <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars"></i>
         </button>
 
-        <!-- Left Side Drawer Links / Logos -->
         <div class="nav-left" id="nav-left-menu">
           
-          <!-- Close Button inside Mobile Drawer -->
           <button class="menu-close-btn" onclick="toggleMobileMenu()">
             <i class="fa-solid fa-xmark"></i>
           </button>
